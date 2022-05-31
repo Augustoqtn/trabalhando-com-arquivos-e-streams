@@ -1,10 +1,5 @@
 <?php
 
-$arquivo = fopen('lista-musicas.txt', 'r');
-
-$tamanhoArquivo = filesize('lista-musicas.txt');
-$musicas =  fread($arquivo, $tamanhoArquivo);
+$musicas = file_get_contents('lista-musicas.txt');
 
 echo $musicas;
-
-fclose($arquivo);
