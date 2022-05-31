@@ -2,8 +2,9 @@
 
 $arquivo = fopen('lista-musicas.txt', 'r');
 
-while (!feof($arquivo)) {
-    $curso = fgets($arquivo);
-    echo $curso;
-}
+$tamanhoArquivo = filesize('lista-musicas.txt');
+$musicas =  fread($arquivo, $tamanhoArquivo);
+
+echo $musicas;
+
 fclose($arquivo);
